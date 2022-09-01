@@ -6,5 +6,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class ApiService {
 
+  private url='https://reqres.in/api/users';
+
   constructor(private http: HttpClient) { }
+
+  buscarUsuarios(page: number){
+    return this.http.get(`${this.url}?page=${page}`);
+  }
 }
