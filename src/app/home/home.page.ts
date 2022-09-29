@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/dot-notation */
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
@@ -9,11 +10,23 @@ import { ApiService } from '../services/api.service';
 
 export class HomePage {
 
-  constructor(private api: ApiService) {}
+  page;
+  perPage;
+  support;
+  total;
+  totalPages;
+
+  constructor(private api: ApiService) {
+    this.buscarTodos();
+  }
 
   buscarTodos(page= 1){
     this.api.buscarUsuarios(page).subscribe(usuarios => {
       console.log(usuarios);
+
+      this.page = usuarios['page'];
+      this.perPage = usuarios['perPage'];
+      this.support = usuarios['support'];
     });
   }
 
