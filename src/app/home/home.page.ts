@@ -6,12 +6,15 @@ import { ApiService } from '../services/api.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
   constructor(private api: ApiService) {}
 
   buscarTodos(page= 1){
-    this.api.buscarUsuarios(page).subscribe(usuarios => {});
+    this.api.buscarUsuarios(page).subscribe(usuarios => {
+      console.log(usuarios);
+    });
   }
 
 }
