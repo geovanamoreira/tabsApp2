@@ -27,6 +27,9 @@ export class HomePage {
       this.page = usuarios['page'];
       this.perPage = usuarios['perPage'];
       this.support = usuarios['support'];
+      this.support = usuarios['support'];
+      this.total = usuarios['total'];
+      this.totalPages = usuarios['totalPages'];
     });
   }
 
